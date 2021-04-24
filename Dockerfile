@@ -22,7 +22,7 @@ ENV LC_ALL en_US.UTF-8
 
     # Python3.9
 RUN python3.9 -m pip install discord.py[voice]
-RUN python3.9 -m pip install pip==21.1
+RUN python3.9 -m pip install pip==20.3.4
 
 USER container
 ENV  USER=container HOME=/home/container
