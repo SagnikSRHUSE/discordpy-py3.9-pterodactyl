@@ -5,9 +5,6 @@ MAINTAINER Sagnik Sasmal, <sagnik@@sagnik.me>
 # Ignore APT warnings about not having a TTY
 ENV DEBIAN_FRONTEND noninteractive
 
-# Make tmp dir
-RUN mkdir /home/container/tmp/
-
 # Install OS deps
 RUN apt-get update \
     && apt-get dist-upgrade -y \
