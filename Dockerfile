@@ -22,7 +22,7 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
     # Python3.9
-RUN python3.9 -m pip install discord.py[voice]
+RUN python3.9 -m pip install --no-cache-dir discord.py[voice]
 
 USER container
 ENV  USER=container HOME=/home/container
