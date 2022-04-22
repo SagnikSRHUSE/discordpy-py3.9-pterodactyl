@@ -31,5 +31,5 @@ WORKDIR /home/container
 
 ENV PIP_NO_CACHE_DIR "true"
 
-COPY ./../entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
