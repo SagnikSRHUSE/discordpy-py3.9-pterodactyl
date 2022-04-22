@@ -1,4 +1,4 @@
-FROM python:3.9-buster
+FROM python:3.9-bullseye
 
 MAINTAINER Sagnik Sasmal, <sagnik@@sagnik.me>
 
@@ -24,10 +24,13 @@ ENV LC_ALL en_US.UTF-8
     # Python3.9
 RUN python3.9 -m pip install --no-cache-dir discord.py[voice]
 
-USER container
-ENV  USER=container HOME=/home/container
+RUN useradd -m -d /home/container container
 
+USER container
+ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
-COPY ./entrypoint.sh /entrypoint.sh
+ENV PIP_NO_CACHE_DIR "true"
+
+COPY ./../entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
