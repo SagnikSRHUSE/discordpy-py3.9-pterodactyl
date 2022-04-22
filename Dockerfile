@@ -12,8 +12,7 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get -y install dirmngr curl software-properties-common locales git cmake \
     && apt-get -y install ffmpeg \
-    && useradd -m -d /home/container container
-    
+
     # Ensure UTF-8
 RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
     && locale-gen
